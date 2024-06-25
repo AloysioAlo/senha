@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exibir Senhas</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        .password {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="password" id="password">Senha: 1</div>
+        <button id="nextButton">Próxima Senha</button>
+        <audio id="clickSound">
+            <source src="click.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script>
+        let currentPassword = 1;
+
+        document.getElementById('nextButton').addEventListener('click', () => {
+            currentPassword++;
+            document.getElementById('password').innerText = 'Senha: ' + currentPassword;
+            document.getElementById('clickSound').play();
+        });
+    </script>
+</body>
+</html>
